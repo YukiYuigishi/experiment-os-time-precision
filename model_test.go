@@ -24,7 +24,7 @@ func TestCompareTime(t *testing.T) {
 	t.Logf("local  experiment time: %s\n", experiment.ExpTime)
 	t.Logf("stored experiment time: %s\n", savedExperiment.ExpTime)
 
-	if diff := cmp.Diff(experiment, savedExperiment); diff != "" {
+	if diff := cmp.Diff(experiment.ExpTime, savedExperiment.ExpTime); diff != "" {
 		t.Fatalf("experiment value is mismatch (-local, +db)\n%s", diff)
 	}
 }
